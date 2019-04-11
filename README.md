@@ -4,7 +4,7 @@
 ## LadyBees
 [![Build Status](https://travis-ci.org/vladimirsan/cf-travis-deployment.svg?branch=master)](https://travis-ci.org/vladimirsan/cf-travis-deployment)
 
-### Author: Xochil Squaglia
+### Author: H'Liana, Lorin, Nikki, Xochil
 
 ### Links and Resources
 * [repo](https://github.com/ladybees/spellingBee/blob/master/README.md)
