@@ -11,6 +11,14 @@
 * [travis]()
 * [Heroku]()
 
+### Environment Setup
+#### .env
+- `PORT` 3000
+- `MONGODB_URI` mongodb://localhost/db
+- `GOOGLE_API_KEY` Google Cloud Text-to-Speech API Key 
+- `ELEMENTARY_API_KEY` Merriam Webster Dictionary Elementary API Key
+- `INTERMEDIATE_API_KEY` Merriam Webster Dictionary Intermediate API Key
+- `COLLEGIATE_API_KEY` Merriam Webster Dictionary Collegiate API Key
 
 ### Modules
 #### 

@@ -1,0 +1,75 @@
+@dkGray: #2D2D2D;
+@ltGray: #525050;
+@pink: #D01345;
+
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+*{
+  box-sizing: border-box;
+}
+#width{
+  width: 960px;
+  margin: 0 auto;
+}
+#fade{
+  transition: 0.5ms;
+}
+#products{
+  list-style: none;
+  li{
+    margin: 10px 0;
+    background-color: lightgray;
+    padding: 20px;
+  }
+}
+body {
+  background: #eee;
+  font-family: 'Karla', sans-serif;
+}
+h1{
+  font-size: 24pt;
+  padding: 20px 0;
+  #width;
+}
+nav{
+  background-color: @ltGray;
+  padding: 10px;
+  div{ #width; }
+}
+ul {
+  padding: 5px;
+  color: white;
+  li{
+    list-style: none;
+    display: inline;
+    margin-right: 15px;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+    #fade;
+  }
+  a:hover{
+    background-color: @pink;
+    #fade;
+  }
+}
+header{
+  background-color: black;
+  color: white;
+}
+main{
+  padding: 10px;
+  background-color: white;
+  div{ #width; }
+}
+p{
+  margin: 10px 0;
+}
+footer{
+  background-color: @ltGray;
+  color: white;
+  padding: 20px;
+  div{ #width; }
+}
