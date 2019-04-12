@@ -11,6 +11,13 @@
 * [travis]()
 * [Heroku]()
 
+### Environment
+
+#### .env
+`GOOGLE_API_KEY`
+`ELEMENTARY_API_KEY`
+`INTERMEDIATE_API_KEY`
+`COLLEGIATE_API_KEY`
 
 ### Modules
 #### 
