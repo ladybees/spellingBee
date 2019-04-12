@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start": "node index.js && set GOOGLE_APPLICATION_CREDENTIALS=cloud-authentication.json",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
     "test": "jest"
