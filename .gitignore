@@ -63,3 +63,6 @@ typings/
 .idea/
 
 db/
+
+#Google CLoud Authentication
+cloud_authentication.json
