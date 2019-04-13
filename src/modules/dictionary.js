@@ -27,7 +27,7 @@ function getWordList(){
 function makeURL(words){
   let urls = [];
   words.forEach(word => {
-    urls.push(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${process.env.COLLEGIATE_API_KEY}`)
+    urls.push(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`)
   });
   return urls;
 }

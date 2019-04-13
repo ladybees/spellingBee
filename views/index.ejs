@@ -5,30 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ladybees</title>
-        <link rel="stylesheet" href="/styles/style.less">
+        <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
+
     <body>
-        <div>
-            <h2>1 out of 5</h2>
-            <h3>Name</h3>
-            <h4>Difficulty</h4>
-        </div>
+        <section>
+            <form action="/game" method="POST">
+                <h1>Hi my name is </h1>
+                <input type="text" name="input" placeholder="name" required>
+                <h1>, and I want to play a(n) </h1>
+                <select name="input" required>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Med.</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <h1> game of Spelling Bee with </h1>
+                <select name="input" required>
+                    <option value="5">five</option>
+                    <option value="10">ten</option>
+                    <option value="15">fifteen</option>
+                </select>
+                <h1>questions.</h1>
+                <button type="submit">🐝</button>
+            </form>
+        </section>
 
-        <!--Sentence-->
-        <h1>
-
-        </h1>
-
-        <button id="hearWord">repeat word</button>
-        <button id="hearSentence">use in a sentence</button>
-
-        <!--Text input-->
-        <input type="text" id="spelledWord" placeholder="Spell word here"/>
-    </body>
-    <footer>
-        <script
-                src="https://code.jquery.com/jquery-3.4.0.min.js"
-                integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-                crossorigin="anonymous"></script>
-    </footer>
 </html>
