@@ -1,6 +1,6 @@
 db/
 .idea/
-.cloud-authentication.json
+cloud-authentication.json
 
 # Created by https://www.gitignore.io/api/vim,node,macos,linux,windows,webstorm,visualstudiocode
 
@@ -249,12 +249,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-<<<<<<< HEAD
-db/
-
-#Google CLoud Authentication
-cloud_authentication.json
-=======
-
-# End of https://www.gitignore.io/api/vim,node,macos,linux,windows,webstorm,visualstudiocode
->>>>>>> 596557fd076417f15d3d08906b89bfe4deb64642
