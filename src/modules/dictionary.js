@@ -26,10 +26,9 @@ const urls = [];
  */
 function makeURL(words){
   words.forEach(word => {
+
     urls.push(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${process.env.COLLEGIATE_API_KEY}`);
     });
-  console.log(urls);
-
 }
 
 function getData(url){

@@ -4,7 +4,6 @@
   "description": "thank u, next",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "start": "node index.js && set GOOGLE_APPLICATION_CREDENTIALS=cloud-authentication.json",
     "voiceLS": "export GOOGLE_APPLICATION_CREDENTIALS=/home/lorin/cf/401/spellingBee/cloud-authentication.json | node index.js",
     "watch": "nodemon index.js",
@@ -25,7 +24,6 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "jest": "^23.6.0",
-    "less": "^3.9.0",
     "mongodb-memory-server": "^2.7.3",
     "mongoose": "^5.3.13",
     "mongoose-schema-jsonschema": "^1.1.15",

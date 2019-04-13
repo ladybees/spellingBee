@@ -1,0 +1,64 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css?family=Karla|Montserrat');
+
+* {
+    font-family: 'Karla', sans-serif;
+}
+body {
+    text-align: center;
+    font-family:'Karla', sans-serif;
+    margin: 20px auto;
+    max-width: 960px;
+}
+header {
+    margin: 0 0 40px 0;
+}
+h1{
+    font-size: 36pt;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+section{
+    margin: 40px auto;
+}
+section > *{
+    line-height: 70px;
+}
+section h1{
+    display: inline;
+}
+section input{
+    border: 0;
+    border-bottom: 2px solid lightgray;
+    width: 150px;
+    font-size: 36pt;
+}
+section select{
+    font-size: 36pt;
+    border: 0;
+    border-bottom: 2px solid lightgray;
+    margin: 0 10px;
+}
+section button{
+    font-size: 36pt;
+    margin-left: 20px;
+}
+main div{
+
+}
+button{
+    border: none;
+    padding: 5px;
+    font-family: 'Karla', sans-serif;
+}
+div input{
+    display: block;
+    margin: 10px auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+    width: 500px;
+}
+.hidden{
+    display: none;
+}

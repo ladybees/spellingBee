@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ladyBees | learn to spell</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>1 of <%= number %></h2>
+        <h3><%= name %></h3>
+        <h4><%= difficulty %></h4>
+    </header>
+
+    <main>
+        <% words.forEach(word => { %>
+        <div id="word<%= word.id %>">
+            <!--Sentence-->
+            <h1>
+                <%= word.sentence %>
+            </h1>
+
+            <button id="hearWord">repeat word</button>
+            <button id="hearSentence">use in a sentence</button>
+
+            <!--Text input-->
+            <form id="spell<%= word.id %>">
+            <input type="text" name="spelledWord" placeholder="Spell word here" required/>
+            </form>
+        </div>
+        <% }); %>
+    </main>
+
+</body>
+<footer>
+    <script
+            src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+</footer>
+</html>
