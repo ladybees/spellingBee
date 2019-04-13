@@ -1,38 +1,43 @@
-'use strict'
+'use strict';
 
+//3rd Party Resources
+const express = require('express');
+const cors = require('cors');
+const dictionary = require('./modules/dictionary');
+const textToSpeech = require('@google-cloud/text-to-speech');
 const fs = require('fs');
 
-// Imports the Google Cloud client library
-const textToSpeech = require('@google-cloud/text-to-speech');
+//Prepare express app
+const app = express();
 
-// Creates a client
-const client = new textToSpeech.TextToSpeechClient();
+//App level MW
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/public'));
 
-// The text to synthesize
-const text = 'Hello, world!';
+//Routes go here if we need them
 
-// Construct the request
-const request = {
-    input: {text: text},
-    // Select the language and SSML Voice Gender (optional)
-    voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
-    // Select the type of audio encoding
-    audioConfig: {audioEncoding: 'MP3'},
-};
+//============================================================
+// Functionality
+//============================================================
 
-// Performs the Text-to-Speech request
-client.synthesizeSpeech(request, (err, response) => {
-    if (err) {
-        console.error('ERROR:', err);
-        return;
+// Ask user name, difficulty, # words
+
+// Runs dictionary
+
+let isRunning = false;
+
+module.exports = {
+  server: app,
+  start: (port) => {
+    if( ! isRunning ) {
+      app.listen(port, () => {
+        isRunning = true;
+        console.log(`Server Up on ${port}`);
+      });
     }
-
-    // Write the binary audio content to a local file
-    fs.writeFile('output.mp3', response.audioContent, 'binary', err => {
-        if (err) {
-            console.error('ERROR:', err);
-            return;
-        }
-        console.log('Audio content written to file: output.mp3');
-    });
-});
+    else {
+      console.log('Server is already running');
+    }
+  }
+};
