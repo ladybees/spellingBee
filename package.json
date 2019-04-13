@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js && set GOOGLE_APPLICATION_CREDENTIALS=cloud-authentication.json",
+    "voiceLS": "export GOOGLE_APPLICATION_CREDENTIALS=/home/lorin/cf/401/spellingBee/cloud-authentication.json | node index.js",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
     "test": "jest"
