@@ -6,14 +6,18 @@ class WordObject{
      constructor(word, sentence, audioFilePathWord, audioFilePathSentence){
         this.word = word;
         this.sentence = sentence;
-        this.audioFilePathSentence = audioFilePathWord;
-        this.audioFilePathSentence = audioFilePathSentence;
+        this.wordFilePath = audioFilePathWord;
+        this.sentenceFilePath = audioFilePathSentence;
     }
 
+    sentenceCleanup(){
+
+    }
 
     wordReplacebyLine(){
         this.sentence = this.sentence.replace(this.word, '______________');
     }
+
 }
 
 

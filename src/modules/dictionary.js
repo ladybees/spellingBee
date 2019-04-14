@@ -2,6 +2,7 @@
 
 const express = require('express');
 const dictionaryRouter = express.Router();
+const Word = require('./wordObject');
 const superagent = require('superagent');
 const synthesize = require('./speechtext');
 
@@ -9,15 +10,13 @@ const synthesize = require('./speechtext');
 //============================================================
 // API Requests to obtain random list of words
 //============================================================
-
-const words = ['banana'];
+const randomWord = require('random-words');
+const words = randomWord(3);
 const urls = [];
 
 //============================================================
 // API Requests to obtain word / sentence
 //============================================================
-
-// H'Liana - this does not work yet. Need to refactor a bit.
 
 /**
  * H'Liana - Create URLs that will be sent to Webster dictionary API
@@ -39,8 +38,9 @@ function getData(url){
       // H'Liana - need to find where in data we can access word + sentence
       let sentence = result.body[[0][0]].def[0].sseq[0][0][1].dt[1][1][0].t; //PLACEHOLDER
       let word = result.body[[0][0]].meta.id;
+      console.log('**' + word, sentence);
 
-      return {'word': word, 'sentence': sentence};
+      return new Word(word, sentence);
     })
   .catch(err => console.error(err))
 }
@@ -53,11 +53,17 @@ function speechToText(){
       // H'Liana - Should return array of objects (words and corresponding sentences)
       // Then, we need to convert to speech + create mp3 files
       result.forEach(word => {
-        synthesize(word);
-      })
+        let wordAudio = synthesize(word.word);
+        let sentAudio = synthesize(word.sentence);
+
+        result.wordFilePath = wordAudio;
+        result.sentenceFilePath = sentAudio;
+        result.wordReplacebyLine();
+      });
+      console.log(result)
     });
 }
 console.log(urls);
 speechToText();
 
-module.exports = { speechToText};
+module.exports = {speechToText};
