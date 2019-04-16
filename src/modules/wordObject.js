@@ -10,7 +10,7 @@ class WordObject{
   }
 
   wordReplacebyLine(){
-    this.sentence = this.sentence.replace(this.word, '______________');
+    this.sentence = this.sentence.replace(this.word, '_________');
   }
 
 }
