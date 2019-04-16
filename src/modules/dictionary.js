@@ -11,10 +11,9 @@ const synthesize = require('./speechtext');
 // API Requests to obtain random list of words
 //============================================================
 const randomWord = require('random-words');
-const words = randomWord(5);
+const words = randomWord(10);
 const urls = [];
 const wordsAndSentence = [];
-const count = 5;
 
 //============================================================
 // API Requests to obtain word / sentence
@@ -41,21 +40,18 @@ function getData(url){
 
     .then(result => {
 
-      console.log(result.body[0].def[0].sseq.length);
-
       for(let i = 0; i < result.body[0].def[0].sseq.length; i++) {
 
-        if (result.body[0].def[0].sseq[i][0][1].dt[1][1][0].t !== undefined) {
+        if (result.body[0].def[0].sseq[i][0][1].dt[1] !== undefined && result.body[0].def[0].sseq[i][0][1].dt[1][1][0].t !== undefined) {
           wordsAndSentence.push({
             word: result.body[[0][0]].meta.id,
-            sentence: result.body[0].def[0].sseq[0][0][1].dt[1][1][0].t
+            sentence: result.body[0].def[0].sseq[i][0][1].dt[1][1][0].t
           });
           console.log(wordsAndSentence);
-          break;
+          break
         }
         // let sentence = result.body[[0][0]].def[0].sseq[0][0][1].dt[1][1][0].t; //PLACEHOLDER
         // let word = result.body[[0][0]].meta.id;
-        // console.log('**' + word, sentence);
       }
 
     })
