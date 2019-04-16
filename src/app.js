@@ -6,8 +6,6 @@ const cors = require('cors');
 const dictionary = require('./modules/dictionary');
 const textToSpeech = require('@google-cloud/text-to-speech');
 const fs = require('fs');
-const jsdom = require('jsdom');
-const $ = require('jquery')(new jsdom.JSDOM().window);
 
 //Prepare express app
 const app = express();
@@ -33,26 +31,24 @@ app.post('/game', startGame);
 function startGame(request, response){
   let [name, difficulty, number] = request.body.input;
   console.log(name, difficulty, number);
-
   let words = [
-    {id: 1, word: 'bananas', sentence: 'this shit is bananas.'},
-    {id: 2, word: 'night', sentence: 'the night is dark.'},
+    {id: 1, word: 'banana', sentence: 'this shit is bananas.'},
+    {id: 2, word: 'night', sentence: 'the night king is going to win.'},
     {id: 3, word: 'karate', sentence: 'chill, i know karate.'},
   ];
-
-  checkSpelling(words);
 
   response.render('game', {name: name, difficulty: difficulty, number: number, words: words});
 }
 
-function checkSpelling(words){
-  //console.log(words)
-  words.forEach(word => {
-    let div = `#word${word.id}`;
-
-
-    });
-}
+// function checkSpelling(event){
+//   event.preventDefault();
+//
+//   let spelling = event.target.spelledWord.value;
+//   if(spelling.toLowerCase() === words[0].word.toLowerCase()){
+//     //H'Liana - When a word is correct, it should toggle the current div and unhide the next div
+//     $( ".target" ).toggle();
+//   }
+// }
 
 // Runs dictionary
 

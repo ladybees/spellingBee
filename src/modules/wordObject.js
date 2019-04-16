@@ -1,18 +1,24 @@
-'use strict';
+'use strict'
+
 
 class WordObject{
 
-   constructor(word, sentence, audioFilePathWord, audioFilePathSentence){
-    this.word = word;
-    this.sentence = sentence;
-    this.audioFilePathSentence = audioFilePathWord;
-    this.audioFilePathSentence = audioFilePathSentence;
-  }
+     constructor(word, sentence, audioFilePathWord, audioFilePathSentence){
+        this.word = word;
+        this.sentence = sentence;
+        this.wordFilePath = audioFilePathWord;
+        this.sentenceFilePath = audioFilePathSentence;
+    }
 
-  wordReplacebyLine(){
-    this.sentence = this.sentence.replace(this.word, '_________');
-  }
+    sentenceCleanup(){
+
+    }
+
+    wordReplacebyLine(){
+        this.sentence = this.sentence.replace(this.word, '______________');
+    }
 
 }
+
 
 module.exports = WordObject;
