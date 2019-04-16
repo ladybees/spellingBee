@@ -17,7 +17,7 @@
 
     <main>
         <% words.forEach(word => { %>
-        <div id="word<%= word.id %>">
+        <div id="div<%= word.id %>" class="hidden">
             <!--Sentence-->
             <h1>
                 <%= word.sentence %>
@@ -27,8 +27,9 @@
             <button id="hearSentence">use in a sentence</button>
 
             <!--Text input-->
-            <form id="spell<%= word.id %>">
-            <input type="text" name="spelledWord" placeholder="Spell word here" required/>
+            <form id="form<%= word.id %>">
+            <input type="hidden" id="word<%= word.id%>" value="<%= word.word %>">
+            <input type="text" name="spelledWord" id="spell<%= word.id %>" placeholder="Spell word here" required/>
             </form>
         </div>
         <% }); %>
@@ -40,5 +41,6 @@
             src="https://code.jquery.com/jquery-3.4.0.min.js"
             integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
             crossorigin="anonymous"></script>
+    <script src="/jquery.js"></script>
 </footer>
 </html>
