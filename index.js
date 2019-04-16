@@ -1,6 +1,7 @@
 'use strict';
 
 require('dotenv').config();
+const randomWord = require('random-words');
 const speechToText = require('./src/modules/dictionary');
 
 // Start up DB Server
