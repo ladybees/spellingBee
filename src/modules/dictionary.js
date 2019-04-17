@@ -58,4 +58,5 @@ function speechToText(){
     });
 }
 
+
 module.exports = { getWordList, speechToText, getData, makeURL };

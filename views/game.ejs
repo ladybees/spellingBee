@@ -10,9 +10,9 @@
 <body>
 
     <header>
-        <h2>1 of <%= number %></h2>
+        <h2><span id="score">0</span> of <%= number %></h2>
         <h3><%= name %></h3>
-        <h4><%= difficulty %></h4>
+        <h5><%= difficulty %></h5>
     </header>
 
     <main>
@@ -33,6 +33,12 @@
             </form>
         </div>
         <% }); %>
+
+        <section id="final" class="hidden">
+            <h1 id="winOrLose"></h1>
+            <h3>Click here to save your score.</h3>
+        </section>
+
     </main>
 
 </body>
