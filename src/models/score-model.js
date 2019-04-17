@@ -1,22 +1,22 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const schema = require('./score-schema');
 require('mongoose-schema-jsonschema')(mongoose);
 
-const scores = mongoose.Schema({
-  name: { type: String, required: true },
-  difficulty: { type: String, required: true },
-  score: { type: Number, required: true },
-  lastWord: { type: String }
-});
-
 class Score {
-  constructor(schema){
-    this.schema = schema;
+  constructor(){
   }
 
-  get()
+  get(){
+    return schema.find();
+  }
+
+  post(entry){
+    let newScore = new schema(entry);
+    return newScore.save();
+  }
 
 }
 
-module.exports = mongoose.model('scores', scores);
+module.exports = Score;

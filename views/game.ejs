@@ -16,8 +16,8 @@
     </header>
 
     <main>
-        <% words.forEach(word => { %>
-        <div id="div<%= word.id %>" class="hidden">
+        <% words.forEach((word, index) => { %>
+        <div id="div<%= index %>" class="hidden">
             <!--Sentence-->
             <h1>
                 <%= word.sentence %>
@@ -27,16 +27,23 @@
             <button id="hearSentence">use in a sentence</button>
 
             <!--Text input-->
-            <form id="form<%= word.id %>">
-            <input type="hidden" id="word<%= word.id%>" value="<%= word.word %>">
-            <input type="text" name="spelledWord" id="spell<%= word.id %>" placeholder="Spell word here" required/>
+            <form id="form<%= index %>">
+            <input type="hidden" id="word<%= index%>" value="<%= word.word %>">
+            <input type="text" name="spelledWord" id="spell<%= index %>" placeholder="Spell word here" required/>
             </form>
         </div>
         <% }); %>
 
         <section id="final" class="hidden">
             <h1 id="winOrLose"></h1>
-            <h3>Click here to save your score.</h3>
+            <form id="finalScore" method="post" action="/score">
+                <label>Name</label><input type="text" name="name" value="<%= name %>" readonly>
+                <label>Score</label><input type="text" name="score" value="" readonly>
+                <label>Difficulty</label><input type="text" name="difficulty" value="<%= difficulty %>" readonly>
+                <label for="missedWord">Missed Word</label><input type="text" name="missedWord" id="missedWord" value ="" readonly>
+
+                <input type="submit" value="Save to Scoreboard">
+            </form>
         </section>
 
     </main>

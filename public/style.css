@@ -50,18 +50,31 @@ section button{
     font-size: 36pt;
     margin-left: 20px;
 }
-main div{
-
+#scores{
+    width: 500px;
+    margin: 0 auto;
+}
+h3 a{
+    line-height: 80px;
+    color: #dba62b;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18pt;
+}
+th{
+    font-size: 18pt;
+    font-weight: bold;
+}
+td{
+    line-height: 30px;
 }
 button{
     border: none;
     padding: 5px;
-    font-family: 'Karla', sans-serif;
 }
 div input{
     display: block;
     margin: 10px auto;
-    font-family: 'Karla', sans-serif;
     font-size: 14pt;
     padding: 5px;
     width: 500px;

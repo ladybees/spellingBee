@@ -24,6 +24,8 @@ const wordsAndSentence = [];
  * @param words - list of random words returned from API call
  * @returns {Array} of URLs that will be sent to Webster dictionary API
  */
+
+/*
 function makeURL(words){
 
   words.forEach(word => {
@@ -58,6 +60,7 @@ function getData(url){
   .catch(err => console.error(err))
 }
 
+
 function speechToText(){
 // H'Liana - Using Promise.all to make multiple API Requests to send word to Webster Dictionary API
 
@@ -80,6 +83,7 @@ function speechToText(){
 }
 
 
-speechToText();
+speechToText();*/
 
-module.exports = {speechToText};
+
+// module.exports = {speechToText};
