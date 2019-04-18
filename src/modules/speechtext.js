@@ -6,7 +6,7 @@ const fs = require('fs');
 // Creates a client
 const client = new textToSpeech.TextToSpeechClient();
 
-const speechToText = (textToSynthesize = 'hello world', id) => {
+const speechToText = (textToSynthesize, word) => {
 
   // Construct the request
   const request = {
@@ -25,7 +25,7 @@ const speechToText = (textToSynthesize = 'hello world', id) => {
     }
 
     // Write the binary audio content to a local file
-    let fileId = `output${id}.mp3`;
+    let fileId = `./public/audio/${word}.mp3`;
 
     fs.writeFile(fileId, response.audioContent, 'binary', err => {
       if (err) {

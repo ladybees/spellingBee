@@ -12,7 +12,6 @@ const synthesize = require('./speechtext');
 // API Requests to obtain random list of words
 //============================================================
 
-let words = randomWord( 10);
 const urls = [];
 const wordsAndSentence = [];
 
@@ -50,28 +49,39 @@ function getData(url){
           for(let i = 0; i < wordData.length; i++) {
 
             let sentenceCheck = wordData[i][0][1].dt;
-
             if (sentenceCheck !== undefined && sentenceCheck[1] !== undefined && sentenceCheck[1][1][0].t) {
 
-          let word = result.body[[0][0]].meta.id;
-          let sentence = wordData[i][0][1].dt[1][1][0].t;
+            let resWord = result.body[[0][0]].meta.id;
+            let resSent = wordData[i][0][1].dt[1][1][0].t;
+            let word;
 
-          wordsAndSentence.push(
-          new Word(word, sentence)
-          );
-          break
-        }
-      };
-      console.log(wordsAndSentence)
+            if(resWord) {
+              word = resWord.replace(/:1/g, '');
+            } else {
+              word = resWord;
+            }
+
+            let sentence = resSent.replace(/\{\/?it}/g,'');
+            let newWord = new Word(word, sentence, `./audio/${word}.mp3`, `${word}-sentence.mp3`);
+            newWord.wordReplaceByLine();
+
+            wordsAndSentence.push(newWord);
+            break
+            }
+          }
+      // console.log(wordsAndSentence)
     })
   .catch(err => console.error(err))
 }
 
 
-function textToSpeech(numberOfWords){
+async function textToSpeech(){
 // H'Liana - Using Promise.all to make multiple API Requests to send word to Webster Dictionary API
 
-    console.log(words)
+  try {
+    let words = await randomWord( 10);
+    console.log(words);
+
     makeURL(words);
     return Promise.all(urls.map(getData))
       .then(result => {
@@ -88,10 +98,10 @@ function textToSpeech(numberOfWords){
 
         return wordsAndSentence;
       });
+  } catch(error) {
+    throw error;
+  }
+
 }
-
-
-// speechToText();
-
 
 module.exports = textToSpeech;

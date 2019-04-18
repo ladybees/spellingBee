@@ -21,22 +21,31 @@
 - `COLLEGIATE_API_KEY` Merriam Webster Dictionary Collegiate API Key
 
 ### Modules
+- *`index.js`*: starts up our MongoDB (dbOn) and our server
+- *`app.js`*: contains our server
+- *`index.ejs`*: contains the template for the user to start the game, put their name in, choose difficulty level and choose the set amount of words they want to be tested on (5, 10, 15)
+- *`game.ejs`*: contains the template for the game play page where the user can hear the word spoken, used in a sentence and try to spell the word
+- *`score.ejs`*: allows you to POST you score
+- *`scores.ejs`*: allows you to GET your old scores
+- *`routes.js`*: contains our routes to GET and POST our routes
+- *`wordObject.js`*: contains the Word constructor for the random word as well as a method to replace the current spelling word with a blank line
+- *`speechtext.js`*: contains the functionality to turn the text into speech
+- *`dictionary.js`*: contains the functionality for the API to use the generated random word to GET a sentence, and then uses the `speechtext.js` function to turn the text into speech
+- *`score-schema.js`*: contains our Mongoose schema for the score page
+- *`score-model.js`*: defines the GET and POST routes for the scores/schema
 #### 
 ##### Exported Values and Methods
+###### `startGame(request, response)`: starts game
 
-###### `greet() -> string`
+###### `class WordObject(word, sentence, audioFilePathWord, audioFilePathSentence` : word constructor for our random word
 
-#### `arithmetic.js`
-##### Exported Values and Methods
+###### `speechToText = (textToSynthesize, id)`: writes an MP3 audio file based on the word
 
-###### `add(...numbers) -> number`
-###### `subtract(...numbers) -> number`
-###### `multiply(...numbers) -> number`
-###### `divide(...numbers) -> number`
+###### `class Score` : creates the GET and POST methods on the Score object
+
+###### `mongoose.model(score)` : exports the Mongoose Score schema
 
 
 #### Tests
 * To run tests, please use the `npm run test` command.
 
-#### UML
-![UML](uml.png)
