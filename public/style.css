@@ -13,54 +13,6 @@ body {
 header {
     margin: 0 0 40px 0;
 }
-h1{
-    font-size: 36pt;
-    font-weight: bold;
-    margin: 0 0 20px 0;
-}
-h4{
-    font-size: 24pt;
-}
-i{
-    color: darkolivegreen;
-    font-style: italic;
-}
-section{
-    margin: 40px auto;
-}
-section > *{
-    line-height: 70px;
-}
-section h1{
-    display: inline;
-}
-section input{
-    border: 0;
-    border-bottom: 2px solid lightgray;
-    width: 150px;
-    font-size: 36pt;
-}
-section select{
-    font-size: 36pt;
-    border: 0;
-    border-bottom: 2px solid lightgray;
-    margin: 0 10px;
-}
-section button{
-    font-size: 36pt;
-    margin-left: 20px;
-}
-#scores{
-    width: 500px;
-    margin: 0 auto;
-}
-h3 a{
-    line-height: 80px;
-    color: #dba62b;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18pt;
-}
 th{
     font-size: 18pt;
     font-weight: bold;
@@ -78,6 +30,67 @@ div input{
     font-size: 14pt;
     padding: 5px;
     width: 500px;
+}
+h1{
+    font-size: 36pt;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+h4{
+    font-size: 24pt;
+    margin: 10px 0;
+}
+a{
+    line-height: 80px;
+    color: #dba62b;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18pt;
+}
+i{
+    color: #dba62b;
+    font-style: italic;
+}
+section{
+    margin: 40px auto;
+}
+section h1{
+    display: inline;
+}
+section input{
+    border: 0;
+    border-bottom: 2px solid lightgray;
+    width: 150px;
+    font-size: 36pt;
+    line-height: 20px;
+}
+section select{
+    font-size: 36pt;
+    border: 0;
+    border-bottom: 2px solid lightgray;
+    margin: 0 10px;
+}
+#start{
+    line-height: 70px;
+}
+#finalScore{
+    line-height: 50px;
+}
+#final input{
+    font-size: 18pt;
+    width: 100px;
+    text-align: center;
+    margin: 0;
+}
+#save{
+    width: 400px;
+}
+#scores{
+    width: 500px;
+    margin: 0 auto;
+}
+#bee{
+    font-size: 36pt;
 }
 .hidden{
     display: none;
