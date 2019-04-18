@@ -25,7 +25,7 @@ const wordsAndSentence = [];
  * @returns {Array} of URLs that will be sent to Webster dictionary API
  */
 
-/*
+
 function makeURL(words){
 
   words.forEach(word => {
@@ -84,7 +84,7 @@ function speechToText(){
 }
 
 
-speechToText();*/
+speechToText();
 
 
-// module.exports = {speechToText};
+ module.exports = {speechToText};
