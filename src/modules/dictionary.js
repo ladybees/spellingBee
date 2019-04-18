@@ -93,5 +93,4 @@ function speechToText(){
 
 speechToText();
 
-
 module.exports = {speechToText};
