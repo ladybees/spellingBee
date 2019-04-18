@@ -2,7 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-// router.param('model', scoreModel);
+const Model = require('../models/score-model');
+const model = new Model();
 
 //============================================================
 // Router
@@ -12,7 +13,7 @@ router.get('/', (request, response) => {
   response.render('index');
 });
 router.post('/game', startGame);
-router.post('/scores', postScore);
+router.post('/score', postScore);
 router.get('/scores', getScores);
 
 //============================================================
@@ -35,19 +36,19 @@ function startGame(request, response){
 }
 
 function postScore(request, response, next){
-  let score = request.body;
 
-  request.model.post(score)
+  model.post(request.body)
     .then(result => {
-      response.status(200).render('score', {scores: result})
+      console.log(result)
+      response.status(200).render('score', {score: result})
     })
     .catch(next);
 }
 
 function getScores(request, response, next){
-  request.model.get()
+  model.get()
     .then(result => {
-      response.status(200).render('score', {scores: result})
+      response.status(200).render('scores', {scores: result})
     })
     .catch(next);
 }
