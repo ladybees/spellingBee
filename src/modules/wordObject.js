@@ -5,7 +5,7 @@ class WordObject{
    constructor(word, sentence, audioFilePathWord, audioFilePathSentence){
     this.word = word;
     this.sentence = sentence;
-    this.audioFilePathSentence = audioFilePathWord;
+    this.audioFilePathWord = audioFilePathWord;
     this.audioFilePathSentence = audioFilePathSentence;
   }
 
