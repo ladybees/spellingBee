@@ -9,8 +9,9 @@ class WordObject{
     this.audioFilePathSentence = audioFilePathSentence;
   }
 
-  wordReplacebyLine(){
-    this.sentence = this.sentence.replace(this.word, '_________');
+  wordReplaceByLine(){
+    this.sentence = this.sentence.replace(this.word, '______');
+    return this.sentence;
   }
 
 }

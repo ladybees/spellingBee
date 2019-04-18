@@ -37,15 +37,16 @@
         <section id="final" class="hidden">
             <h1 id="winOrLose"></h1>
             <form id="finalScore" method="post" action="/score">
-                <label>Name</label><input type="text" name="name" value="<%= name %>" readonly>
-                <label>Score</label><input type="text" name="score" value="" readonly>
-                <label>Difficulty</label><input type="text" name="difficulty" value="<%= difficulty %>" readonly>
-                <label for="missedWord">Missed Word</label><input type="text" name="missedWord" id="missedWord" value ="" readonly>
+                <label>Name</label><input type="text" name="name" value="<%= name %>" readonly><br>
+                <label>Score</label><input type="text" name="score" value="" readonly><br>
+                <label>Difficulty</label><input type="text" name="difficulty" value="<%= difficulty %>" readonly><br>
+                <label for="missedWord">Missed Word</label><input type="text" name="missedWord" id="missedWord" value ="" readonly><br>
 
-                <input type="submit" value="Save to Scoreboard">
+                <button type="submit">Save to Scoreboard</button>
             </form>
+            <a href="./">[ Play Again? ]</a></h3>
         </section>
-
+        <h3>
     </main>
 
 </body>
