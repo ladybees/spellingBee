@@ -25,7 +25,7 @@ const speechToText = (textToSynthesize = 'hello world', id) => {
     }
 
     // Write the binary audio content to a local file
-    let fileId = `output${id}.mp3`;
+    let fileId = `./public/audio/output${id}.mp3`;
 
     fs.writeFile(fileId, response.audioContent, 'binary', err => {
       if (err) {
