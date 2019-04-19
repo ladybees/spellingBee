@@ -56,8 +56,6 @@ function onButtonClick(id){
 
 function loading(){
   // Triggers loading
-  console.log('bam')
-  alert('click')
-  $('#start').hide();
-  $('#loading').show();
+  $('#start').fadeToggle();
+  $('#loading').toggleClass('hidden');
 }

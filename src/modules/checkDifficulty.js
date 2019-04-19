@@ -30,7 +30,7 @@ function getDifficulty(obj){
             return obj.word;
           }
         case 'hard':
-          if (wordDifficulty >= 5){
+          if (wordDifficulty >= 3){
             return obj.word;
           }
       }
