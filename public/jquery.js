@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
-  $('#div1').show();
+  $('#div0').show();
   console.log('Ready');
 
   // Count amount of divs - this determines how many events are defined.
@@ -43,3 +43,21 @@ $(document).ready(function() {
 
 });
 
+function onButtonClick(id){
+  let audio = document.getElementById(id);
+  try {
+    audio.load();
+    audio.play();
+  } catch(e) {
+    console.error(e);
+  }
+
+}
+
+function loading(){
+  // Triggers loading
+  console.log('bam')
+  alert('click')
+  $('#start').hide();
+  $('#loading').show();
+}

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ladyBees | learn to spell</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
 </head>
 <body>
 
@@ -23,8 +24,11 @@
                 <%= word.sentence %>
             </h1>
 
-            <button id="hearWord">repeat word</button>
-            <button id="hearSentence">use in a sentence</button>
+
+            <audio src=<%= word.audioFilePathWord %> id="audio<%= index %>"></audio>
+            <button onclick="onButtonClick('audio<%= index %>')">repeat word</button>
+            <audio src=<%= word.audioFilePathSentence %> id="audio<%= index %>-sentence"></audio>
+            <button onclick="onButtonClick('audio<%= index %>-sentence')">use in a sentence</button>
 
             <!--Text input-->
             <form id="form<%= index %>">
