@@ -92,6 +92,13 @@ section select{
 #bee{
     font-size: 36pt;
 }
+#loading{
+    text-align: center;
+}
+#loading img{
+    margin: 50px auto;
+    display: block;
+}
 .hidden{
     display: none;
 }

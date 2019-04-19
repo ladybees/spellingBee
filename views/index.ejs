@@ -6,11 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ladybees</title>
         <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
     </head>
 
     <body>
         <section id="start">
-            <form action="/game" method="POST">
+            <form action="/game" method="POST" onsubmit="loading()">
                 <h1>Hi my name is </h1>
                 <input type="text" name="input" placeholder="name" required>
                 <h1>, and I want to play a(n) </h1>
@@ -29,5 +30,18 @@
                 <button type="submit" id="bee">🐝</button>
             </form>
         </section>
+        <section id="loading" class="hidden">
+            <h1>Loading...</h1>
+            <img src="./assets/bee-loading.gif" alt="Loading">
+            <h3>Please wait as we load your game.</h3>
+        </section>
+    </body>
+    <footer>
+        <script
+                src="https://code.jquery.com/jquery-3.4.0.min.js"
+                integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+                crossorigin="anonymous"></script>
+        <script src="/jquery.js"></script>
+    </footer>
 
 </html>
