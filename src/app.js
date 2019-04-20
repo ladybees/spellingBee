@@ -3,9 +3,6 @@
 //3rd Party Resources
 const express = require('express');
 const cors = require('cors');
-const dictionary = require('./modules/dictionary');
-const textToSpeech = require('@google-cloud/text-to-speech');
-const fs = require('fs');
 const router = require('./router/routes');
 
 //Prepare express app

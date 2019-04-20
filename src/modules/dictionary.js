@@ -41,6 +41,7 @@ function getData(url){
           if(resWord) {
             resWord = resWord.replace(/:1/g, '');
             resWord = resWord.replace(/:2/g, '');
+            resWord = resWord.replace(/:3/g, '');
           }
 
           let sentence = resSent.replace(/\{\/?it}/g,'');
@@ -52,20 +53,55 @@ function getData(url){
   .catch(err => console.error(err))
 }
 
+async function harderRandomWords(difficulty, numberOfQuestions){
+  let harderWords = [];
+  let minCorpusCount, maxCorpusCount;
+  let results = 50;
+
+  if (difficulty === 'medium'){
+    minCorpusCount = 100000;
+  } else if (difficulty === 'hard'){
+    minCorpusCount = 50000;
+    maxCorpusCount = 100000;
+  }
+
+  if (numberOfQuestions >= 10){
+    if (difficulty === 'medium') results += 20;
+    if (difficulty === 'hard') results += 50;
+  }
+
+  let url = `http://api.wordnik.com/v4/words.json/randomWords?api_key=${process.env.WORDNIK_API_KEY}&hasDictionaryDef=true&minCorpusCount=${minCorpusCount}&limit=${results}&maxCorpusCount=${maxCorpusCount}&excludePartOfSpeech=proper-noun&includePartOfSpeech=noun,adjective,verb`;
+
+  return superagent.get(url)
+    .then(result => {
+      let words = result.body;
+      words.forEach(word => {
+        harderWords.push(word.word)
+      });
+
+      return harderWords;
+    })
+
+}
+
 async function textToSpeech(numberOfQuestions, difficulty){
 // H'Liana - Using Promise.all to make multiple API Requests to send word to Webster Dictionary API
 
   const wordsAndSentence = [];
 
   try {
-    let words = await randomWord(50);
-    console.log(words);
+    let words;
+    if (difficulty === 'easy'){
+      words = await randomWord(25);
+    } else {
+      words = await harderRandomWords(difficulty, numberOfQuestions);
+    }
 
     // H'Liana - From here, we narrow down the words that fit into the user's difficulty setting
     let finalWords = await checkDifficulty(words, difficulty);
-    console.log(finalWords);
 
     let urls = makeURL(finalWords);
+
     return Promise.all(urls.map(getData))
       .then(results => {
         results.forEach(result => {
@@ -81,6 +117,8 @@ async function textToSpeech(numberOfQuestions, difficulty){
         if (wordsAndSentence.length > numberOfQuestions){
           let difference = wordsAndSentence.length - numberOfQuestions;
           wordsAndSentence.splice(numberOfQuestions, difference);
+        } else if (wordsAndSentence.length < numberOfQuestions){
+
         }
 
         wordsAndSentence.map(word => {

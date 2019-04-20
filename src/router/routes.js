@@ -27,16 +27,18 @@ router.get('/scores', getScores);
 // Ask user name, difficulty, # words
 async function startGame(request, response, next){
   let [name, difficulty, number] = request.body.input;
-  let directory = `${process.cwd()}/public/audio`;
+  let directory = `${__dirname}/../../public/audio`;
 
   fs.readdir(directory, (err, files) => {
     if (err) console.log(err);
 
-    for (const file of files) {
-      fs.unlink(path.join(directory, file), err => {
-        console.log('Deleting: ' + file);
-        if (err) console.log(err);
-      });
+    if (files){
+      for (const file of files) {
+        fs.unlink(path.join(directory, file), err => {
+          console.log('Deleting: ' + file);
+          if (err) console.log(err);
+        });
+      }
     }
   });
 

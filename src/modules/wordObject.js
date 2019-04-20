@@ -10,7 +10,8 @@ class WordObject{
   }
 
   wordReplaceByLine(){
-    this.sentence = this.sentence.replace(this.word, '______');
+    let regex = new RegExp(this.word, 'gi');
+    this.sentence = this.sentence.replace(regex, '______');
     return this.sentence;
   }
 
