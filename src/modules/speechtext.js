@@ -1,10 +1,19 @@
 'use strict';
 
 const textToSpeech = require('@google-cloud/text-to-speech');
+
 const fs = require('fs');
 
 // Creates a client
-const client = new textToSpeech.TextToSpeechClient();
+const client = new textToSpeech.TextToSpeechClient({
+  projectId: 'ladybees-f6169',
+  credentials: {
+    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+    private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+    client_id: process.env.GOOGLE_CLIENT_ID
+  }
+});
 
 const speechToText = (textToSynthesize, word) => {
 
