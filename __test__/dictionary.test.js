@@ -39,11 +39,10 @@ describe('api server + route tests', () => {
 
     let request =
 
-      ((body){name: 'Xochil', difficulty: 'easy', score: 5, missedWord: 'banana'})
-    ;
+      {name: 'Xochil', difficulty: 'easy', score: 5, missedWord: 'banana'};
 
     return mockClient
-      .post('/scores')
+      .post('/score')
       .send(request)
       .then(results => {
         expect(results.status).toBe(200);
