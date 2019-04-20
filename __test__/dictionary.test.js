@@ -35,22 +35,7 @@ describe('api server + route tests', () => {
   // })
 
 
-  it('should be able to post to the score page', () => {
 
-    let request =
-
-      ((body){name: 'Xochil', difficulty: 'easy', score: 5, missedWord: 'banana'})
-    ;
-
-    return mockClient
-      .post('/scores')
-      .send(request)
-      .then(results => {
-        expect(results.status).toBe(200);
-
-      });
-
-  });
 });
 //
 //
