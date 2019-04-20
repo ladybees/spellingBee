@@ -12,7 +12,7 @@ const speechToText = (textToSynthesize, word) => {
   const request = {
     input: {text: textToSynthesize},
     // Select the language and SSML Voice Gender (optional)
-    voice: {languageCode: 'en-US', ssmlGender: 'FEMALE'},
+    voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
     // Select the type of audio encoding
     audioConfig: {audioEncoding: 'MP3'},
   };

@@ -26,14 +26,16 @@ function getDifficulty(obj){
             return obj.word;
           }
         case 'medium':
-          if (wordDifficulty >=3 && wordDifficulty < 7){
+          if (wordDifficulty > 3 && wordDifficulty < 6){
             return obj.word;
           }
         case 'hard':
-          if (wordDifficulty >= 3){
+          if (wordDifficulty >= 5){
             return obj.word;
           }
       }
+    }).catch(error => {
+
     })
 }
 
