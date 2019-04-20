@@ -44,7 +44,7 @@ async function startGame(request, response, next){
 
   try {
     let words = await textToSpeech(number, difficulty);
-    response.render('game', {name: name, difficulty: difficulty, number: number, words: words});
+    response.status(200).render('game', {name: name, difficulty: difficulty, number: number, words: words});
   } catch(e) {
     next(e);
   }
