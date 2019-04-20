@@ -60,6 +60,7 @@ async function harderRandomWords(difficulty, numberOfQuestions){
 
   if (difficulty === 'medium'){
     minCorpusCount = 100000;
+    maxCorpusCount = 300000;
   } else if (difficulty === 'hard'){
     minCorpusCount = 50000;
     maxCorpusCount = 100000;
