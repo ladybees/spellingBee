@@ -9,7 +9,7 @@
 ### Links and Resources
 * [repo](https://github.com/ladybees/spellingBee/blob/master/README.md)
 * [travis]()
-* [Heroku]()
+* [Heroku](https://ladybees.herokuapp.com/)
 
 ### Environment Setup
 #### .env
@@ -33,6 +33,7 @@
 - *`dictionary.js`*: contains the functionality for the API to use the generated random word to GET a sentence, and then uses the `speechtext.js` function to turn the text into speech
 - *`score-schema.js`*: contains our Mongoose schema for the score page
 - *`score-model.js`*: defines the GET and POST routes for the scores/schema
+- *`checkDifficulty.js`*: contains the functionality to allow the user to choose difficulty level for game
 #### 
 ##### Exported Values and Methods
 ###### `startGame(request, response)`: starts game
@@ -45,7 +46,11 @@
 
 ###### `mongoose.model(score)` : exports the Mongoose Score schema
 
+###### `getFinalWords` : creates the functionality to allow word difficulty levels for the user
+
 
 #### Tests
 * To run tests, please use the `npm run test` command.
 
+#### UML
+![diagram](Copy of LadyBees Speeling Bee Game.png)
