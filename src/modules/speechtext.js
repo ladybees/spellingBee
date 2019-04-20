@@ -4,6 +4,7 @@ const textToSpeech = require('@google-cloud/text-to-speech');
 const dotEnv = require('dotenv').config();
 
 const fs = require('fs');
+require('dotenv').config();
 
 // Creates a client
 const client = new textToSpeech.TextToSpeechClient({
