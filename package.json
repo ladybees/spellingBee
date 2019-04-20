@@ -1,10 +1,10 @@
 {
-  "name": "server",
+  "name": "spelling-bee",
   "version": "1.0.0",
-  "description": "thank u, next",
+  "description": "Spelling Bee app for Code 401 Midterm",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js && set GOOGLE_APPLICATION_CREDENTIALS=cloud-authentication.json",
+    "start": "node index.js",
     "voiceLS": "export GOOGLE_APPLICATION_CREDENTIALS=home/lorin/cf/401/spellingBee/cloud-authentication.json | node index.js",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
