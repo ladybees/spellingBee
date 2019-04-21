@@ -26,10 +26,10 @@ router.get('/scores', getScores);
 
 // Ask user name, difficulty, # words
 async function startGame(request, response, next){
-  // let [name, difficulty, number] = request.body.input;
   let name = request.body.name;
   let difficulty = request.body.difficulty;
-  let number = request.body.input;
+  let number = request.body.number;
+
   let directory = `${__dirname}/../../public/audio`;
 
   fs.readdir(directory, (err, files) => {
