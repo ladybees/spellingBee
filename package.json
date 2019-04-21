@@ -8,7 +8,7 @@
     "voiceLS": "export GOOGLE_APPLICATION_CREDENTIALS=home/lorin/cf/401/spellingBee/cloud-authentication.json | node index.js",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
-    "test": "jest",
+    "test": "jest --coverage --detectOpenHandles",
     "dbOn": "mkdir -p ./db && mongod --dbpath ./db",
     "dbOff": "killall mongod"
   },
@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/text-to-speech": "^0.5.1",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "debug": "^4.1.0",
     "dotenv": "^6.1.0",

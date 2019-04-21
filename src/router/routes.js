@@ -26,7 +26,10 @@ router.get('/scores', getScores);
 
 // Ask user name, difficulty, # words
 async function startGame(request, response, next){
-  let [name, difficulty, number] = request.body.input;
+  // let [name, difficulty, number] = request.body.input;
+  let name = request.body.name;
+  let difficulty = request.body.difficulty;
+  let number = request.body.input;
   let directory = `${__dirname}/../../public/audio`;
 
   fs.readdir(directory, (err, files) => {
@@ -50,14 +53,13 @@ async function startGame(request, response, next){
   }
 }
 
-  function postScore(request, response, next){
-    // console.log(request.body)
-    model.post(request.body)
-      .then(result => {
-        response.status(200).render('score', {score: result})
-      })
-      .catch(next);
-  }
+function postScore(request, response, next){
+  model.post(request.body)
+    .then(result => {
+      response.status(200).render('score', {score: result})
+    })
+    .catch(next);
+}
 
 function getScores(request, response, next){
   model.get()

@@ -1,7 +1,11 @@
 'use strict';
 
 const textToSpeech = require('@google-cloud/text-to-speech');
+<<<<<<< HEAD
+require('dotenv').config();
+=======
 const dotEnv = require('dotenv').config();
+>>>>>>> master
 
 const fs = require('fs');
 require('dotenv').config();
