@@ -4,6 +4,8 @@
 const express = require('express');
 const cors = require('cors');
 const router = require('./router/routes');
+const bodyParser = require('body-parser');
+
 
 //Prepare express app
 const app = express();
@@ -13,8 +15,10 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
+// app.use(express.json());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
-
 
 let isRunning = false;
 
