@@ -74,7 +74,7 @@ describe('application tests', () => {
     });
   });
   describe('functionality tests', () => {
-    xit('dictionary.js module - returns X number of word objects based on user input', async () => {
+    it('dictionary.js module - returns X number of word objects based on user input', async () => {
       // This test seems to run fine locally but throws an error on Travis due to lack of private key needed from the .env
       let testWord = await dictionary(1, 'easy');
 
@@ -91,7 +91,7 @@ describe('application tests', () => {
       wordObject.wordReplaceByLine();
       expect(wordObject.sentence).toBe('this is a ______');
     });
-    xit('checkDifficulty.js module - returns only objects with the user\'s difficulty', async () => {
+    it('checkDifficulty.js module - returns only objects with the user\'s difficulty', async () => {
       // This test seems to run fine locally but throws an error on Travis due to lack of private key needed from the .env
       let arr = ['dog', 'test', 'trash', 'embarrass'];
       let testHard = await difficulty(arr, 'hard');
