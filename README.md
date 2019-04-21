@@ -1,4 +1,4 @@
-![CF](./public/assets/favicon.png) Spelling Bee Text-to-Speech
+![CF](./public/assets/bee-loading.gif) Spelling Bee Text-to-Speech
 ==============================================
 
 ## LadyBees
