@@ -1,4 +1,4 @@
-![CF](https://rlv.zcache.com/spelling_bee_champion_metal_ornament-r35035800243e486fb9e0cd2dd9a0fa4f_x7s2p_8byvr_307.jpg?rvtype=content) Spelling Bee Text-to-Speech
+![CF](./public/assets/favicon.png) Spelling Bee Text-to-Speech
 ==============================================
 
 ## LadyBees
