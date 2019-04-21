@@ -118,8 +118,6 @@ async function textToSpeech(numberOfQuestions, difficulty){
         if (wordsAndSentence.length > numberOfQuestions){
           let difference = wordsAndSentence.length - numberOfQuestions;
           wordsAndSentence.splice(numberOfQuestions, difference);
-        } else if (wordsAndSentence.length < numberOfQuestions){
-
         }
 
         wordsAndSentence.map(word => {
