@@ -2,15 +2,15 @@
 ==============================================
 
 ## LadyBees
-[![Build Status](https://travis-ci.org/vladimirsan/cf-travis-deployment.svg?branch=master)](https://travis-ci.org/vladimirsan/cf-travis-deployment)
+[![Build Status](https://travis-ci.com/ladybees/spellingBee.svg?branch=master)](https://travis-ci.com/ladybees/spellingBeet)
 
 ### Author: H'Liana, Lorin, Nikki, Xochil
 
 ### Links and Resources
 * [repo](https://github.com/ladybees/spellingBee/blob/master/README.md)
-* [travis]()
+* [travis](https://travis-ci.com/ladybees/spellingBee)
 * [Heroku](https://ladybees.herokuapp.com/)
-* [Dev-Azure] (https://dev.azure.com/liananiehrah/Lady%20Bees)
+* [Dev-Azure](https://dev.azure.com/liananiehrah/Lady%20Bees)
 
 ### Environment Setup
 #### .env
@@ -57,6 +57,21 @@
 
 #### Tests
 * To run tests, please use the `npm run test` command.
+* Tests cover the following:
+  ##### Routes
+  * `GET /` should return 200 status
+  * `GET /scores` should return 200 status
+  * `POST /game` should return 200 status
+  * `POST /score` should return 200 status
+  
+  ##### Modules / Functionality
+  * `Dictionary.js` should return `X` number of word objects based on user input
+  * `wordObject.js` can create a new word object and replace sentences with blank lines
+  * `checkDifficulty.js` returns only objects with the user's difficulty
+  
+  ##### MongoDB
+  * Tests `POST`
+  * Tests `GET`
 
 #### UML
 ![diagram](./public/assets/ladyBeesSpellingUML.png)
