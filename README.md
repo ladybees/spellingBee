@@ -10,15 +10,21 @@
 * [repo](https://github.com/ladybees/spellingBee/blob/master/README.md)
 * [travis]()
 * [Heroku](https://ladybees.herokuapp.com/)
+* [Dev-Azure] (https://dev.azure.com/liananiehrah/Lady%20Bees)
 
 ### Environment Setup
 #### .env
 - `PORT` 3000
 - `MONGODB_URI` mongodb://localhost/db
 - `GOOGLE_API_KEY` Google Cloud Text-to-Speech API Key 
-- `ELEMENTARY_API_KEY` Merriam Webster Dictionary Elementary API Key
+- `WORDNIK_API_KEY` Wordnik API Key for word length/difficulty
 - `INTERMEDIATE_API_KEY` Merriam Webster Dictionary Intermediate API Key
-- `COLLEGIATE_API_KEY` Merriam Webster Dictionary Collegiate API Key
+- `TWINWORDS_HOST` Generates the random word(s)
+- `TWINWORDS_KEY` Key to generate random word(s)
+- `GOOGLE_PRIVATE_KEY` Need for Google text-to-speech
+- `GOOGLE_PRIVATE_KEY_ID` Need for Google text-to-speech
+- `GOOGLE_CLIENT_EMAIL` Need for Google text-to-speech
+- `GOOGLE_CLIENT_ID` Need fo Google text-to-speech
 
 ### Modules
 - *`index.js`*: starts up our MongoDB (dbOn) and our server
@@ -53,4 +59,4 @@
 * To run tests, please use the `npm run test` command.
 
 #### UML
-![diagram](Copy of LadyBees Speeling Bee Game.png)
+![diagram](./public/assets/ladyBeesSpellingUML.png)
