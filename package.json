@@ -37,10 +37,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ladybees/spellingBee.git"
+    "url": "git+https://github.com/react-spelling-bee/spellingbee-backend.git"
   },
   "bugs": {
-    "url": "https://github.com/ladybees/spellingBee/issues"
+    "url": "https://github.com/react-spelling-bee/spellingbee-backend/issues"
   },
-  "homepage": "https://github.com/ladybees/spellingBee#readme"
+  "homepage": "https://github.com/react-spelling-bee/spellingbee-backend/#readme"
 }
