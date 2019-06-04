@@ -97,7 +97,9 @@ describe('application tests', () => {
       let testHard = await difficulty(arr, 'hard');
       let testMedium = await difficulty(arr, 'medium');
       expect(testHard).toEqual(['embarrass']);
+      expect(testHard.length).toEqual(1);
       expect(testMedium).toEqual(['trash', 'embarrass']);
+      expect(testHard.length).toEqual(2);
     });
   })
 });

@@ -44,8 +44,9 @@ function getData(url){
             resWord = resWord.replace(/:3/g, '');
           }
 
+          let URL = 'http://localhost:3000'
           let sentence = resSent.replace(/\{\/?it}/g,'');
-          return new Word(resWord, sentence, `./audio/${resWord}.mp3`, `./audio/${resWord}-sentence.mp3`);
+          return new Word(resWord, sentence, `${URL}/audio/${resWord}.mp3`, `${URL}/audio/${resWord}-sentence.mp3`);
           }
         }
       // console.log(wordsAndSentence)
@@ -93,7 +94,7 @@ async function textToSpeech(numberOfQuestions, difficulty){
   try {
     let words;
     if (difficulty === 'easy'){
-      words = await randomWord(25);
+      words = await randomWord(5);
     } else {
       words = await harderRandomWords(difficulty, numberOfQuestions);
     }

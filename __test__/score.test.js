@@ -16,7 +16,7 @@ afterAll(supergoose.stopDB);
 describe('Score model', () => {
   it('can post() a new score', () => {
     const score = new Score();
-    let testObj = {results: 'Score'};
+    let testObj = {name: 'bob', difficulty: 'easy', score: 12, missedWord: 'hula'};
 
     return score.post(testObj)
       .then(record => {
@@ -24,8 +24,6 @@ describe('Score model', () => {
           expect(record[key]).toEqual(testObj[key]);
         });
 
-        expect(score.database.length).toEqual(1);
-        expect(score.database).toBeTruthy();
       })
       .catch(e => console.error('ERR', e));
   });
@@ -35,16 +33,14 @@ describe('Score model', () => {
     let testObj = {name: 'bob', difficulty: 'easy', score: 12, missedWord: 'hula'};
 
     return score.post(testObj)
-
       .then(record => {
-        console.log(testObj);
         return score.get(record)
           .then(score => {
-            console.log(record, 'I AM THE RECORD');
             Object.keys(testObj).forEach(key => {
               console.log(Object.keys);
               expect(score[0][key]).toEqual(testObj[key]);
             });
+            expect(record._id).toBeTruthy();
           });
       });
   });
