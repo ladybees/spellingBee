@@ -59,7 +59,7 @@ async function startGame(request, response, next){
 function postScore(request, response, next){
   model.post(request.body)
     .then(result => {
-      response.status(200).render('score', {score: result})
+      response.status(200).send(result);
     })
     .catch(next);
 }
@@ -67,7 +67,7 @@ function postScore(request, response, next){
 function getScores(request, response, next){
   model.get()
     .then(result => {
-      response.status(200).render('scores', {scores: result})
+      response.status(200).send(result);
     })
     .catch(next);
 }
